@@ -14,43 +14,45 @@ const Post = () => {
 
     const Submitform = (e) => {
         e.preventDefault()
+        if (fname || lname || email || number || country || city === "") {
+            alert("enter all data ...")
+        }
         setSubmitform(true)
     }
 
     return (<>
-        
+
         <h2>CONVERT YOUR DATA INTO PDF... </h2>
         {
             !submitform ? (
-
                 <Container>
                     <div className="container">
                         <form className="row g-3">
                             <div className="col-md-6">
                                 <label className="form-label">First name</label>
-                                <input name='fname' onChange={(e) => setFname(e.target.value)} value={fname} type="text" className="form-control" required />
+                                <input required name='fname' onChange={(e) => setFname(e.target.value)} value={fname} type="text" className="form-control" />
                             </div>
                             <div className="col-md-6">
                                 <label className="form-label">Last name</label>
-                                <input type="text" name='lname' onChange={(e) => setLname(e.target.value)} value={lname} className="form-control" required />
+                                <input required type="text" name='lname' onChange={(e) => setLname(e.target.value)} value={lname} className="form-control" />
                             </div>
                             <div className="col-md-6">
                                 <label className="form-label">Mobile Number</label>
                                 <div className="input-group">
-                                    <input type="number" name='number' onChange={(e) => SetNumber(e.target.value)} value={number} className="form-control" required />
+                                    <input required type="number" name='number' onChange={(e) => SetNumber(e.target.value)} value={number} className="form-control" />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <label className="form-label">Email</label>
-                                <input type="email" name='email' onChange={(e) => setEmail(e.target.value)} value={email} className="form-control" required />
+                                <input required type="email" name='email' onChange={(e) => setEmail(e.target.value)} value={email} className="form-control" />
                             </div>
                             <div className="col-md-6">
                                 <label className="form-label">Country</label>
-                                <input type="text" name='country' onChange={(e) => SetCountry(e.target.value)} value={country} className="form-control" required />
+                                <input required type="text" name='country' onChange={(e) => SetCountry(e.target.value)} value={country} className="form-control" />
                             </div>
                             <div className="col-md-6">
                                 <label className="form-label">City</label>
-                                <input type="text" name='city' onChange={(e) => setCity(e.target.value)} value={city} className="form-control" required />
+                                <input required type="text" name='city' onChange={(e) => setCity(e.target.value)} value={city} className="form-control" />
                             </div>
                             <div className="col-12">
                                 <button onClick={Submitform} type="submit">Submit form</button>
